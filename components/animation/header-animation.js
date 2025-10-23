@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const initNeuralAnimation = () => {
+    if (window.innerWidth <= 900) return;
     const canvas = document.getElementById('neural-animation')
     if (!canvas) return
 
