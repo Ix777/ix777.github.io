@@ -1,0 +1,111 @@
+/* Контейнер для сетки логотипов */
+#skills-card.skills .skills-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 5px;
+}
+
+/* Стили для логотипов */
+#skills-card.skills .skills-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+/* Изображение внутри логотипа */
+#skills-card.skills .skills-logo img {
+  width: 32px;
+  height: 32px;
+  transition: filter 0.3s ease;
+}
+
+/* Эффект при наведении на ВСЮ КАРТОЧКУ */
+#skills-card.skills:hover .skills-logo img {
+  filter: drop-shadow(0 0 6px rgba(0, 245, 212, 0.8));
+}
+
+/* Текст под логотипом */
+#skills-card.skills .skills-logo-text {
+  margin-top: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* === СЕКЦИЯ ПРОГРЕСС БАРА АНИМАЦИИ === */
+/* (полностью ваша оригинальная реализация) */
+#skills-card.skills .skills-ai-animation {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+#skills-card.skills .skills-ai-divider-container {
+  position: relative;
+  height: 10px;
+  overflow: visible;
+}
+
+#skills-card.skills .skills-ai-divider-triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 50%, 0 50%, 0 50%);
+  background: linear-gradient(
+    to right,
+    transparent,
+    #ff40c6 20%,
+    #fad296 50%,
+    #00ffb3 80%,
+    transparent
+  );
+  box-shadow: 0 0 5px rgba(0, 243, 255, 0.3);
+}
+
+#skills-card.skills .skills-ai-percentage-display {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 20px;
+  min-width: 40px;
+  text-align: center;
+  z-index: 15;
+  white-space: nowrap;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  background: none;
+  border: none;
+}
+
+#skills-card.skills .skills-ai-pulse-runner {
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: 10;
+  opacity: 1;
+}
+
+#skills-card.skills .skills-ai-echo-pulse {
+  position: absolute;
+  top: 50%;
+  width: 15px;
+  height: 3px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: 5;
+  opacity: 0;
+  background: radial-gradient(
+    circle at center,
+    white 0%,
+    rgba(0, 255, 255, 0.8) 30%,
+    transparent 70%
+  );
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5);
+}

@@ -1,0 +1,145 @@
+/* =========================================== */
+/* УНИКАЛЬНЫЕ СТИЛИ ДЛЯ КАРТОЧКИ "КОНТАКТЫ" */
+/* =========================================== */
+
+/* Основной контейнер карточки контактов */
+#contacts-card.contacts {
+  position: relative;
+  overflow: hidden;
+  padding: 25px;
+}
+
+/* Стили для каждого элемента контакта */
+#contacts-card.contacts .card__contact-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  margin-bottom: 15px;
+  background: rgba(25, 25, 45, 0.3);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 243, 255, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+#contacts-card.contacts .card__contact-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(0, 243, 255, 0.2);
+}
+
+/* Декоративная линия при наведении */
+#contacts-card.contacts .card__contact-item:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+}
+
+/* Стили для иконок */
+#contacts-card.contacts .card__contact-item .card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 18px;
+  font-size: 18px;
+  color: var(--primary);
+  min-width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+#contacts-card.contacts .card__contact-item:hover .card__icon {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.8));
+}
+
+/* Стили для текста контактов */
+#contacts-card.contacts .card__contact-item .card__contact-text {
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  flex-grow: 1;
+  color: inherit;
+  text-decoration: none;
+}
+
+#contacts-card.contacts .card__contact-item:hover .card__contact-text {
+  color: var(--primary);
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
+}
+
+/* Индикатор копирования */
+#contacts-card.contacts .copied-indicator {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  font-size: 13px;
+  color: #00ff9d;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-50%) scale(0.9);
+  font-weight: 700;
+  background: rgba(0, 20, 30, 0.9);
+  padding: 5px 12px;
+  border-radius: 15px;
+  z-index: 3;
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Анимация пульсации */
+@keyframes contact-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#contacts-card.contacts .card__contact-item.copied {
+  animation: contact-pulse 0.7s ease;
+  background: rgba(51, 37, 65, 0.3);
+}
+
+#contacts-card.contacts .card__contact-item.copied .copied-indicator {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  #contacts-card.contacts .card__contact-item {
+    padding: 12px 15px;
+  }
+
+  #contacts-card.contacts .card__contact-item .card__icon {
+    font-size: 16px;
+    min-width: 22px;
+    height: 22px;
+    margin-right: 15px;
+  }
+
+  #contacts-card.contacts .card__contact-item .card__contact-text {
+    font-size: 15px;
+  }
+
+  #contacts-card.contacts .copied-indicator {
+    font-size: 12px;
+    padding: 4px 10px;
+    right: 15px;
+  }
+}

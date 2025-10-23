@@ -1,0 +1,161 @@
+/* ================= ОСНОВНЫЕ СТИЛИ АНИМАЦИИ ================= *
+
+/* Контейнер секции с фиксированной высотой для стабильности анимации */
+.ai-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  position: relative;
+  z-index: 10; /* Важно для корректного наложения эффектов */
+  min-height: 150px; /* Гарантирует пространство при загрузке */
+}
+
+/* Основной контейнер для текста и индикатора */
+.ai-container {
+  position: relative;
+  max-width: min(1000px, 90vw); /* Адаптивность + ограничение ширины */
+  height: 70px; /* Увеличено для лучшего отображения анимации */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Стили анимированного текста */
+.ai-text {
+  font-size: 1rem; /* Увеличено для лучшей читаемости */
+  font-weight: 500;
+  text-align: center;
+  padding: 8px 20px; /* Увеличенные отступы */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease-out, visibility 1.2s ease-out, text-shadow 0.4s ease; /* Плавное изменение свечения */
+  color: #5de0cb;
+  text-shadow: 0 0 20px #00f3ff, 0 0 18px #fd53ef;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px; /* Оптимальная минимальная ширина */
+  box-sizing: border-box;
+  letter-spacing: 0.5px; /* Улучшает читаемость */
+}
+
+/* Состояние видимости текста */
+.ai-text.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Стили для неоновых символов */
+.ai-text .neon-symbol {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1em; /* Увеличено для акцента */
+  width: 35px; /* Оптимальный размер */
+  min-width: 35px;
+  text-align: center;
+  margin-right: 5px; /* Увеличен отступ */
+  flex-shrink: 0;
+  transition: text-shadow 0.5s ease; /* Плавное изменение свечения */
+}
+
+/* Анимация пульсации для "живого" эффекта */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.95;
+    text-shadow: 0 0 4px #00f3ff, 0 0 12px #d042ec; /* Усиленный эффект */
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 3px #00f3ff, 0 0 15px #ff2975; /* Яркая фаза пульсации */
+  }
+}
+
+.pulsating {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* ================= ИНДИКАТОР ЗАГРУЗКИ ================= */
+.loading-indicator {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* Увеличен промежуток между точками */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  opacity: 1;
+  transition: opacity 0.5s ease, visibility 0.5s ease 0.5s; /* Задержка скрытия */
+}
+
+.loading-dot {
+  width: 10px; /* Увеличен размер */
+  height: 10px;
+  border-radius: 50%;
+  background-color: #5de0cb;
+  opacity: 0.8;
+  animation: loading-bounce 1.4s infinite ease-in-out;
+  animation-delay: var(--delay);
+}
+
+/* Улучшенная анимация точек */
+@keyframes loading-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    background-color: #00f3ff;
+    box-shadow: 0 0 8px #00f3ff, 0 0 15px #9d4edd; /* Свечение в покое */
+  }
+  50% {
+    transform: translateY(-12px); /* Выше прыжок */
+    opacity: 1;
+    background-color: #ff2975;
+    box-shadow: 0 0 15px #ff2975, 0 0 30px #9d4edd; /* Яркое свечение в прыжке */
+  }
+}
+
+/* ================= АДАПТИВНОСТЬ ================= */
+@media (max-width: 768px) {
+  .ai-section {
+    padding: 30px 10px; /* Уменьшенные отступы */
+  }
+
+  .ai-container {
+    height: 60px; /* Оптимизированная высота */
+  }
+
+  .ai-text {
+    font-size: 1.05rem;
+    min-width: 280px; /* Уже для мобильных */
+    padding: 6px 12px;
+  }
+
+  .ai-text .neon-symbol {
+    font-size: 1.3em;
+    width: 30px;
+    min-width: 30px;
+    margin-right: 10px;
+  }
+
+  .loading-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-text {
+    font-size: 0.95rem;
+    min-width: 250px;
+    flex-direction: column; /* Символ сверху на маленьких экранах */
+  }
+
+  .ai-text .neon-symbol {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}

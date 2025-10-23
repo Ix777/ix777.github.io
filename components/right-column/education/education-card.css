@@ -1,0 +1,111 @@
+/* УНИКАЛЬНЫЕ СТИЛИ ДЛЯ КАРТОЧКИ "ОБРАЗОВАНИЕ" */
+
+/* КОНТЕЙНЕР ДЛЯ ДВУХ КОЛОНОК */
+#education-card.education .education-columns {
+  display: flex;
+  gap: 25px;
+}
+
+/* ОБЩИЕ СТИЛИ ДЛЯ КОЛОНОК */
+#education-card.education .education-column {
+  flex: 1;
+  min-width: 0; /* Для правильного сжатия содержимого */
+}
+
+/* СТИЛИ ДЛЯ БЛОКОВ (ОСТАЮТСЯ БЕЗ ИЗМЕНЕНИЙ) */
+#education-card.education .card__institution {
+  background: rgba(25, 25, 45, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 0; /* Убираем нижний отступ */
+  border: 1px solid rgba(0, 243, 255, 0.1);
+  transition: all 0.3s ease;
+  height: 100%; /* Занимаем всю высоту колонки */
+}
+
+#education-card.education .card__institution:hover {
+  background: rgba(25, 25, 45, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 243, 255, 0.15);
+}
+
+#education-card.education .card__institution-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#education-card.education .institution-title-text {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+#education-card.education .card__period {
+  font-size: 13px;
+  color: var(--primary);
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+}
+
+#education-card.education .card__period::before {
+  content: '📅';
+  position: absolute;
+  left: 0;
+}
+
+#education-card.education .card__achievement {
+  margin-bottom: 12px;
+  padding-left: 10px;
+  border-left: 2px solid rgba(0, 243, 255, 0.3);
+}
+
+#education-card.education .card__detail {
+  font-size: 13px;
+  margin: 5px 0 5px 15px;
+  position: relative;
+}
+
+#education-card.education .card__detail::before {
+  content: '→';
+  position: absolute;
+  left: -15px;
+  color: var(--primary);
+}
+
+#education-card.education .card__highlight {
+  font-weight: 600;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+#education-card.education .card__institution-title .card__icon {
+  margin-right: 15px;
+  font-size: 16px;
+  color: var(--primary);
+  min-width: 20px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+#education-card.education .card__institution:hover .card__icon {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px rgba(0, 243, 255, 0.7));
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 900px) {
+  #education-card.education .education-columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

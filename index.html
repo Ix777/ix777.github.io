@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="разработчик" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+    <title>AI</title>
+
+    <!-- ФАВИКОН -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌀</text></svg>"
+    />
+
+    <!-- Шрифты и иконки -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="css/main-styles.css" />
+
+    <!-- Стили компонентов -->
+    <!-- Анимации -->
+    <link rel="stylesheet" href="components/animation/header-styles.css" />
+    <link rel="stylesheet" href="components/divider/divider-styles.css" />
+    <link rel="stylesheet" href="components/divider-assistant/ai.css" />
+
+    <!-- Левая колонка -->
+    <link rel="stylesheet" href="components/left-column/profile/profile-card.css" />
+    <link rel="stylesheet" href="components/left-column/about/about-card.css" />
+
+    <!-- Правая колонка -->
+    <link rel="stylesheet" href="components/right-column/skills/skills-card.css" />
+    <link rel="stylesheet" href="components/right-column/experience/experience-card.css" />
+    <link rel="stylesheet" href="components/right-column/education/education-card.css" />
+    <link rel="stylesheet" href="components/right-column/contacts/contacts-card.css" />
+  </head>
+  <body>
+    <!-- Шапка с нейронной анимацией -->
+    <div class="animation-top">
+      <div class="header-animation">
+        <canvas id="neural-animation"></canvas>
+      </div>
+    </div>
+
+    <!-- Разделитель -->
+    <div class="center-window">
+      <div class="divider-line"></div>
+      <div class="divider-box"></div>
+    </div>
+
+    <!-- Текстовый блок AI -->
+    <section class="ai-section">
+      <div class="ai-container">
+        <div id="textElement" class="ai-text"></div>
+        <div id="loadingIndicator" class="loading-indicator"></div>
+      </div>
+    </section>
+
+    <!-- Основной контент -->
+    <div class="main-container">
+      <!-- Левая колонка -->
+      <div class="left-column">
+        <!-- Профиль -->
+        <div id="profile-container">
+          <!-- Содержимое загрузится из profile-card.html -->
+        </div>
+
+        <!-- Обо мне -->
+        <div id="about-container">
+          <!-- Содержимое загрузится из about-card.html -->
+        </div>
+      </div>
+
+      <!-- Правая колонка -->
+      <div class="right-column">
+        <!-- Блок навыков -->
+        <div id="skills-container">
+          <!-- Содержимое загрузится из skills-card.html -->
+        </div>
+        <!-- Образование -->
+        <div id="education-container">
+          <!-- Содержимое загрузится из education-card.html -->
+        </div>
+          <!-- Опыт работы -->
+          <div id="experience-container">
+            <!-- Содержимое загрузится из experience-card.html -->
+          </div>
+
+          <!-- Контакты -->
+          <div id="contacts-container">
+            <!-- Содержимое загрузится из contacts-card.html -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Three.js для анимаций -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Основные скрипты -->
+    <script type="module" src="js/main-scripts.js"></script>
+
+    <!-- Скрипты компонентов -->
+    <script type="module" src="components/animation/header-animation.js"></script>
+    <script type="module" src="components/divider/divider-animation.js"></script>
+    <script type="module" src="components/divider-assistant/ai.js"></script>
+    <script type="module" src="components/left-column/profile/profile-card.js"></script>
+    <script type="module" src="components/left-column/about/about-card.js"></script>
+    <script type="module" src="components/right-column/skills/skills-card.js"></script>
+    <script type="module" src="components/right-column/experience/experience-card.js"></script>
+    <script type="module" src="components/right-column/education/education-card.js"></script>
+    <script type="module" src="components/right-column/contacts/contacts-card.js"></script>
+  </body>
+</html>

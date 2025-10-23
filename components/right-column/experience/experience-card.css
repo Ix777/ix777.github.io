@@ -1,0 +1,123 @@
+/* =========================================== */
+/* УНИКАЛЬНЫЕ СТИЛИ ДЛЯ КАРТОЧКИ "ОПЫТ РАБОТЫ" */
+/* =========================================== */
+#experience-card.experience {
+  padding: 30px; /* Увеличенный отступ */
+}
+
+/* КОНТЕЙНЕР ДЛЯ ДВУХ КОЛОНОК */
+#experience-card.experience .education-columns {
+  display: flex;
+  gap: 30px; /* Увеличенный промежуток между колонками */
+}
+
+/* ОБЩИЕ СТИЛИ ДЛЯ КОЛОНОК */
+#experience-card.experience .education-column {
+  flex: 1;
+  min-width: 0;
+}
+
+/* СТИЛИ ДЛЯ БЛОКОВ */
+#experience-card.experience .card__institution {
+  background: rgba(25, 25, 45, 0.3);
+  border-radius: 15px; /* Увеличено скругление углов */
+  padding: 25px; /* Увеличен внутренний отступ */
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 243, 255, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+#experience-card.experience .card__institution:hover {
+  background: rgba(25, 25, 45, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 243, 255, 0.2); /* Усилен эффект тени */
+}
+
+#experience-card.experience .card__institution-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Увеличен отступ */
+}
+
+#experience-card.experience .institution-title-text {
+  font-size: 15px; /* Увеличен размер шрифта */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px; /* Увеличен межбуквенный интервал */
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+#experience-card.experience .card__period {
+  font-size: 14px; /* Увеличен размер шрифта */
+  color: var(--primary);
+  margin-bottom: 20px; /* Увеличен отступ */
+  padding-left: 35px; /* Увеличен отступ */
+  position: relative;
+}
+
+#experience-card.experience .card__period::before {
+  content: '📅';
+  position: absolute;
+  left: 0;
+  font-size: 16px; /* Увеличен размер иконки */
+}
+
+#experience-card.experience .card__achievement {
+  margin-bottom: 15px; /* Увеличен отступ */
+  padding-left: 15px; /* Увеличен отступ */
+  border-left: 3px solid rgba(0, 243, 255, 0.4); /* Утолщена линия */
+}
+
+#experience-card.experience .card__detail {
+  font-size: 14px; /* Увеличен размер шрифта */
+  margin: 8px 0 8px 20px; /* Увеличен отступ */
+  position: relative;
+  line-height: 1.6; /* Увеличен межстрочный интервал */
+}
+
+#experience-card.experience .card__detail::before {
+  content: '→';
+  position: absolute;
+  left: -20px; /* Увеличен отступ стрелки */
+  color: var(--primary);
+  font-size: 16px; /* Увеличен размер стрелки */
+}
+
+#experience-card.experience .card__highlight {
+  font-weight: 600;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 10px; /* Увеличен отступ */
+  font-size: 14px; /* Увеличен размер шрифта */
+}
+
+#experience-card.experience .card__institution-title .card__icon {
+  margin-right: 18px; /* Увеличен отступ */
+  font-size: 18px; /* Увеличен размер иконки */
+  color: var(--primary);
+  min-width: 24px; /* Увеличен размер */
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+#experience-card.experience .card__institution:hover .card__icon {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.8)); /* Усилен эффект свечения */
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 900px) {
+  #experience-card.experience .education-columns {
+    flex-direction: column;
+    gap: 25px; /* Увеличен отступ между блоками */
+  }
+
+  #experience-card.experience {
+    padding: 25px; /* Скорректирован отступ для мобильных */
+  }
+}

@@ -1,0 +1,47 @@
+/* Уникальные стили для карточки профиля */
+#profile-card.profile {
+  padding: 35px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+/* Контейнер аватара */
+#profile-card.profile .card__image-container {
+  width: 160px;
+  height: 200px;
+  margin: 0 auto 30px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 243, 255, 0.1); /* Тонкая светящаяся граница */
+}
+
+/* Изображение профиля */
+#profile-card.profile .card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Сохраняем пропорции */
+}
+
+/* Стили для имени */
+#profile-card.profile .card__name {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+/* Стили для подзаголовков (специализации) */
+#profile-card.profile .card__subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #49f0d9; /* Зеленоватый оттенок для подзаголовков */
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
